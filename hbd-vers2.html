@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f56b9a">
+<title>Happy Birthday enjell 💗</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:#713c54;
+  background:linear-gradient(180deg,#fff5f9,#ffe5ef,#fff8fb);
+  overflow-x:hidden;
+}
+
+/* ================= PASSWORD ================= */
+
+#lockScreen{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:
+    radial-gradient(circle at 20% 20%,#ffddeb,transparent 35%),
+    radial-gradient(circle at 80% 80%,#ffb4cf,transparent 35%),
+    linear-gradient(135deg,#ff8fb7,#e9578b);
+}
+
+.lockBox{
+  width:100%;
+  max-width:380px;
+  padding:35px 25px;
+  text-align:center;
+  border-radius:30px;
+  background:rgba(255,255,255,.23);
+  border:1px solid rgba(255,255,255,.5);
+  backdrop-filter:blur(20px);
+  box-shadow:0 25px 70px rgba(100,20,60,.25);
+  animation:boxIn .8s ease;
+}
+
+.lockHeart{
+  font-size:70px;
+  animation:heartbeat 1.4s infinite;
+}
+
+.lockBox h1{
+  color:white;
+  margin:10px 0;
+  font-size:31px;
+}
+
+.lockBox p{
+  color:white;
+  line-height:1.6;
+  margin-bottom:22px;
+}
+
+.password{
+  width:100%;
+  padding:16px;
+  border:0;
+  outline:0;
+  border-radius:18px;
+  text-align:center;
+  font-size:18px;
+  letter-spacing:5px;
+  color:#d5487c;
+  background:white;
+}
+
+.openButton{
+  width:100%;
+  padding:16px;
+  margin-top:14px;
+  border:0;
+  border-radius:18px;
+  background:white;
+  color:#d8487d;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.error{
+  display:none;
+  color:white;
+  margin-top:12px;
+  font-size:14px;
+}
+
+@keyframes boxIn{
+  from{
+    opacity:0;
+    transform:scale(.75);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+@keyframes heartbeat{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.18)}
+}
+
+/* ================= WEBSITE ================= */
+
+#website{
+  display:none;
+}
+
+/* ================= FLOATING ================= */
+
+.floating{
+  position:fixed;
+  bottom:-40px;
+  pointer-events:none;
+  z-index:100;
+  animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+  0%{
+    opacity:0;
+    transform:translateY(0) rotate(0);
+  }
+
+  15%{
+    opacity:1;
+  }
+
+  100%{
+    opacity:0;
+    transform:translateY(-110vh) rotate(360deg);
+  }
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px 20px;
+  position:relative;
+  overflow:hidden;
+}
+
+.heroContent{
+  position:relative;
+  z-index:2;
+}
+
+.heroSmall{
+  color:#b65076;
+  letter-spacing:4px;
+  font-size:13px;
+}
+
+.hero h1{
+  color:#df4e85;
+  font-size:54px;
+  margin:18px 0 10px;
+  text-shadow:0 8px 25px rgba(220,70,120,.2);
+}
+
+.hero h2{
+  font-size:31px;
+  color:#743b53;
+}
+
+.heroDate{
+  margin-top:12px;
+  color:#a75576;
+}
+
+.startButton{
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 26px;
+  border-radius:30px;
+  background:#e95c90;
+  color:white;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(210,70,120,.25);
+}
+
+/* ================= SECTION ================= */
+
+section{
+  max-width:950px;
+  margin:auto;
+  padding:75px 20px;
+}
+
+.title{
+  text-align:center;
+  font-size:30px;
+  color:#d94e82;
+  margin-bottom:12px;
+}
+
+.subtitle{
+  text-align:center;
+  color:#986079;
+  margin-bottom:35px;
+}
+
+/* ================= STORY ================= */
+
+.story{
+  background:rgba(255,255,255,.8);
+  padding:30px 25px;
+  border-radius:25px;
+  line-height:1.8;
+  text-align:center;
+  box-shadow:0 12px 35px rgba(160,50,100,.1);
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+  overflow:hidden;
+  position:relative;
+  border-radius:25px;
+  background:white;
+  box-shadow:0 15px 40px rgba(150,50,100,.18);
+}
+
+.galleryTrack{
+  display:flex;
+  transition:transform .45s ease;
+  touch-action:pan-y;
+}
+
+.photo{
+  min-width:100%;
+  position:relative;
+}
+
+.photo img{
+  display:block;
+  width:100%;
+  height:470px;
+  object-fit:cover;
+}
+
+.caption{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:40px 18px 18px;
+  text-align:center;
+  color:white;
+  background:linear-gradient(transparent,rgba(0,0,0,.7));
+}
+
+.caption h3{
+  margin-bottom:6px;
+}
+
+.caption p{
+  font-size:13px;
+}
+
+.galleryButton{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:5;
+  width:43px;
+  height:43px;
+  border:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.85);
+  color:#d64a7e;
+  font-size:27px;
+  cursor:pointer;
+}
+
+.prev{
+  left:12px;
+}
+
+.next{
+  right:12px;
+}
+
+.dots{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:17px;
+}
+
+.dot{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:#efb2c8;
+  cursor:pointer;
+}
+
+.dot.active{
+  background:#df4e85;
+  transform:scale(1.3);
+}
+
+/* ================= VIDEO ================= */
+
+.videoCard{
+  background:white;
+  padding:14px;
+  margin-bottom:25px;
+  border-radius:25px;
+  box-shadow:0 12px 35px rgba(160,50,100,.13);
+}
+
+.videoCard video{
+  width:100%;
+  display:block;
+  border-radius:18px;
+  background:#111;
+  max-height:520px;
+}
+
+.videoText{
+  text-align:center;
+  padding:18px 8px 8px;
+}
+
+.videoText h3{
+  color:#d84e82;
+  margin-bottom:7px;
+}
+
+.videoText p{
+  color:#966079;
+  font-size:14px;
+  line-height:1.5;
+}
+
+/* ================= MEMORY ================= */
+
+.memoryGrid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.memory{
+  background:white;
+  border-radius:22px;
+  padding:23px 15px;
+  text-align:center;
+  box-shadow:0 9px 28px rgba(160,50,100,.1);
+  transition:.3s;
+}
+
+.memory:hover{
+  transform:translateY(-7px);
+}
+
+.memoryIcon{
+  font-size:36px;
+}
+
+.memory h3{
+  color:#d84e82;
+  margin:9px 0 6px;
+}
+
+.memory p{
+  font-size:13px;
+  line-height:1.5;
+}
+
+/* ================= TIMELINE ================= */
+
+.timeline{
+  position:relative;
+}
+
+.timeline:before{
+  content:"";
+  position:absolute;
+  left:20px;
+  top:0;
+  bottom:0;
+  width:3px;
+  background:#f0a4bd;
+}
+
+.timelineItem{
+  position:relative;
+  padding-left:58px;
+  margin-bottom:32px;
+}
+
+.timelineItem:before{
+  content:"💗";
+  position:absolute;
+  left:3px;
+  top:-4px;
+  font-size:29px;
+}
+
+.timelineItem h3{
+  color:#d84e82;
+  margin-bottom:7px;
+}
+
+.timelineItem p{
+  line-height:1.6;
+  font-size:14px;
+}
+
+/* ================= LETTER ================= */
+
+.letter{
+  min-height:280px;
+  padding:30px 25px;
+  border-radius:25px;
+  background:#fffafd;
+  box-shadow:0 12px 35px rgba(160,50,100,.12);
+  line-height:1.8;
+  outline:none;
+}
+
+.letter h3{
+  text-align:center;
+  color:#d84e82;
+  margin-bottom:20px;
+}
+
+.editInfo{
+  text-align:center;
+  color:#ad7a91;
+  font-size:12px;
+  margin-top:13px;
+}
+
+/* ================= GIFT ================= */
+
+.giftArea{
+  text-align:center;
+}
+
+.gift{
+  font-size:105px;
+  cursor:pointer;
+  display:inline-block;
+  animation:bounceGift 1.5s infinite;
+}
+
+@keyframes bounceGift{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
+
+.surprise{
+  display:none;
+  margin-top:20px;
+  padding:25px;
+  background:white;
+  border-radius:25px;
+  box-shadow:0 12px 35px rgba(160,50,100,.12);
+  animation:boxIn .6s ease;
+}
+
+.surprise h3{
+  color:#d84e82;
+  margin-bottom:10px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  padding:50px 20px;
+  text-align:center;
+  background:#e85c90;
+  color:white;
+}
+
+footer h2{
+  margin-bottom:10px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+  .hero h1{
+    font-size:43px;
+  }
+
+  .hero h2{
+    font-size:25px;
+  }
+
+  .photo img{
+    height:430px;
+  }
+
+  section{
+    padding:60px 17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================================================= -->
+<!-- PASSWORD -->
+<!-- ================================================= -->
+
+<div id="lockScreen">
+
+  <div class="lockBox">
+
+    <div class="lockHeart">💗</div>
+
+    <h1>Hai, Enjell 🌸</h1>
+
+    <p>
+      Ada kejutan kecil ni aku <br>
+      buat khusus untukmu...hehe
+    </p>
+
+    <input
+      id="password"
+      class="password"
+      type="password"
+      inputmode="numeric"
+      maxlength="8"
+      placeholder="DDMMYYYY"
+    >
+
+    <button class="openButton" onclick="unlock()">
+      🔓 Buka
+    </button>
+
+    <div class="error" id="error">
+      Password nya 30092026,sayangg 💕
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- WEBSITE -->
+<!-- ================================================= -->
+
+<div id="website">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="heroContent">
+
+    <div class="heroSmall">
+      A LITTLE SURPRISE FOR YOU
+    </div>
+
+    <h1>Happy Birthday</h1>
+
+    <h2>Njell 💗</h2>
+
+    <div class="heroDate">
+      30 September 2026 🎂
+    </div>
+
+    <a href="#story" class="startButton">
+      Buka Ceritanya sayang ✨
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- STORY -->
+
+<section id="story">
+
+  <h2 class="title">
+    Untuk Njell 💕
+  </h2>
+
+  <p class="subtitle">
+    Sebuah website kecil yang aku buat untuk  menampilkan beberapa kenangan kita.
+  </p>
+
+  <div class="story">
+
+    <p>
+      Kita pernah melewati banyak cerita bersama.
+      Dari masa sekolah, di luar sekolah,kegiatan,
+      makan di kantin sekolah, sampai berbagai
+      momen kecil yang akhirnya menjadi kenangan yang selalu aku ingat.
+    </p>
+
+    <br>
+
+    <p>
+      Walaupun waktu terus berjalan dan banyak
+      hal berubah, beberapa kenangan tetap
+      menjadi bagian dari cerita yang pernah ada.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- FOTO KENANGAN -->
+<!-- ================================================= -->
+
+<section>
+
+  <h2 class="title">
+    Ini Kita berdua yaa,di baca ya📸
+  </h2>
+
+  <p class="subtitle">
+    Geser foto ke kiri atau kanan 💗
+  </p>
+
+  <div class="gallery">
+
+    <button class="galleryButton prev" onclick="prevPhoto()">
+      ‹
+    </button>
+
+    <div class="galleryTrack" id="galleryTrack">
+
+
+      <div class="photo">
+
+        <img src="foto1.jpg" alt="Kenangan 1">
+
+        <div class="caption">
+
+          <h3>Konser date 💕</h3>
+
+          <p>
+            Ini konser date pertama kita ya.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="photo">
+
+        <img src="foto2.jpg" alt="Kenangan 2">
+
+        <div class="caption">
+
+          <h3>Cermin kelas 🌸</h3>
+
+          <p>
+            Momen sederhana yang terasa spesial.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="photo">
+
+        <img src="foto3.jpg" alt="Kenangan 3">
+
+        <div class="caption">
+
+          <h3>Menunggu mu,menari 🏫</h3>
+
+          <p>
+            Kalau ga salah di sini hujan ya,kita mau buat trand hujan tapi ga jadi.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="photo">
+
+        <img src="foto4.jpg" alt="Kenangan 4">
+
+        <div class="caption">
+
+          <h3>Muka bulat,Kaca mata bulat 💗</h3>
+
+          <p>
+            Ini foto random mu yang aku dapat,lucu kan
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="photo">
+
+        <img src="foto5.jpg" alt="Kenangan 5">
+
+        <div class="caption">
+
+          <h3>Muka jelek,tapi pede ✨</h3>
+
+          <p>
+            Hehee ga tau mau buat caption apa soal foto nya.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="photo">
+
+        <img src="foto6.jpg" alt="Kenangan 6">
+
+        <div class="caption">
+
+          <h3>Mirror Error 🌷</h3>
+
+          <p>
+            Aib aib,tapi bagus ga si hehe.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <button class="galleryButton next" onclick="nextPhoto()">
+      ›
+    </button>
+
+  </div>
+
+  <div class="dots" id="dots"></div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- VIDEO KENANGAN -->
+<!-- ================================================= -->
+
+<section>
+
+  <h2 class="title">
+    Vlog kita hanya ini  🎬
+  </h2>
+
+  <p class="subtitle">
+    Momen momen yang aku suka 💕
+  </p>
+
+
+  <!-- VIDEO 1 -->
+
+  <div class="videoCard">
+
+    <video
+      controls
+      playsinline
+      preload="metadata"
+    >
+
+      <source
+        src="video1.mp4"
+        type="video/mp4"
+      >
+
+      Browser kamu tidak mendukung video.
+
+    </video>
+
+    <div class="videoText">
+
+      <h3>
+        Vlog kitaaa 🎞️
+      </h3>
+
+      <p>
+        ini kita sambil cerita yaa,heheh lucuu.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- VIDEO 2 -->
+
+  <div class="videoCard">
+
+    <video
+      controls
+      playsinline
+      preload="metadata"
+    >
+
+      <source
+        src="video2.mp4"
+        type="video/mp4"
+      >
+
+      Browser kamu tidak mendukung video.
+
+    </video>
+
+    <div class="videoText">
+
+      <h3>
+        Kangen pegang mukamu lagii 💗
+      </h3>
+
+      <p>
+        Sebuah momen kecil dari cerita kitaa.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MEMORIES -->
+<!-- ================================================= -->
+
+<section>
+
+  <h2 class="title">
+    Kenangan kecil kita 💞
+  </h2>
+
+  <p class="subtitle">
+    Hal-hal kecil yang punya cerita.
+  </p>
+
+  <div class="memoryGrid">
+
+
+    <div class="memory">
+
+      <div class="memoryIcon">
+        🏫
+      </div>
+
+      <h3>
+        Kelas waktu itu
+      </h3>
+
+      <p>
+        Jangan di tanya lagi,tiap jam istirahat pasti di kelas mu,sampe mbg juga di bawa hehee.
+      </p>
+
+    </div>
+
+
+    <div class="memory">
+
+      <div class="memoryIcon">
+        🌆
+      </div>
+
+      <h3>
+        Sampai Malam
+      </h3>
+
+      <p>
+        Ingat ga si kita berkereta malam malam di tambah hujan di situ aku suruh kamu memelukku.
+      </p>
+
+    </div>
+
+
+    <div class="memory">
+
+      <div class="memoryIcon">
+        🍜
+      </div>
+
+      <h3>
+        Kantin
+      </h3>
+
+      <p>
+        Makan bersama dengan cerita sederhana.
+      </p>
+
+    </div>
+
+
+    <div class="memory">
+
+      <div class="memoryIcon">
+        💬
+      </div>
+
+      <h3>
+        Sampai Sekarang
+      </h3>
+
+      <p>
+        Waktu berjalan, tetapi komunikasi masih ada,walau rada rada tapi aku sukaaa.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- TIMELINE -->
+<!-- ================================================= -->
+
+<section>
+
+  <h2 class="title">
+    Cerita Kita 🕊️
+  </h2>
+
+  <div class="timeline">
+
+
+    <div class="timelineItem">
+
+      <h3>
+        Awal Cerita
+      </h3>
+
+      <p>
+        Semuanya dimulai dari masa Smp,
+        ketika banyak hal terasa sederhana,menjadi istimewa karna hadir mu,apa lagi silverquenn itu.
+      </p>
+
+    </div>
+
+
+    <div class="timelineItem">
+
+      <h3>
+        Banyak Kenangan
+      </h3>
+
+      <p>
+        Ada banyak momen kecil yang akhirnya
+        menjadi bagian dari cerita kitaa,ga terhitung ya jumlah nya,mulai dari mengawani mu di jam istirahat,latihan nari,sampai sleepcal ya hampir 24 jam,di masa sekolah.
+      </p>
+
+    </div>
+
+
+    <div class="timelineItem">
+
+      <h3>
+        Waktu Berjalan
+      </h3>
+
+      <p>
+        Setelah semuanya, banyak hal berubah,
+        tetapi komunikasi masih terus berjalan.
+      </p>
+
+    </div>
+
+
+    <div class="timelineItem">
+
+      <h3>
+        Hari Ini
+      </h3>
+
+      <p>
+        Hari ini menjadi hari spesial untukmu.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SURAT -->
+<!-- ================================================= -->
+
+<section>
+
+  <h2 class="title">
+    Surat Kecil 💌
+  </h2>
+
+  <div
+    class="letter"
+    contenteditable="true"
+  >
+
+    <h3>
+      Untuk Njell 💗
+    </h3>
+
+    <p>
+      Selamat ulang tahun, Njell.
+    </p>
+
+    <br>
+
+    <p>
+      Semoga di umur yang baru ini,
+      semua hal baik datang kepadamu.
+      Semoga apa yang kamu inginkan
+      perlahan bisa tercapai.
+    </p>
+
+    <br>
+
+    <p>
+      Terima kasih untuk semua kenangan
+      yang pernah kita buat bersama,kadang kenangan kita terlintas begitu saja tapi aku tidak mencoba melawan nya,aku menikmati setiap berjalan satu per satu,rasanya ingin mengilang kembali,pengen seperti itu lagii wkwk.
+    </p>
+      DIHARI ULANG TAHUN MU,semoga kau lebih baik lagi,jauh lebih pintar lagi,jauh lebih dewasa lagi,jauh lebih saat ibadah lagi,jauh bermanfaat lagi bagi orng lain
+    <br>
+
+    <p>
+      Ini pertama kali ya aku merayakan ulang tahun mu,tapi aku ga bisa di sisi muu sayang bngtt yaa,tapi nanti ada waktu nya kok kita bakalan jumpa danMENGHABIS KAN WAKTU BERDUA BERSAMAAAA....aku tak sabar menunggu moment itu,aku excited soal ituu sabarr yaa aku tau kau pingin jumpaaa
+      
+      terus apa lagii...
+      
+      
+      aku ga pandai merangkai kataaa njelll,harap maklum yaa,POKOKNYA DI ULANG TAHUN MU INI KAU HARUS HAPPY hehee
+    </p>
+
+  </div>
+
+  <div class="editInfo">
+    ✍️ Tekan teks surat untuk mengeditnya.
+  </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- HADIAH -->
+<!-- ================================================= -->
+
+<section>
+
+  <h2 class="title">
+    Ada Satu Lagi 🎁
+  </h2>
+
+  <p class="subtitle">
+    Coba klik hadiahnya...
+  </p>
+
+  <div class="giftArea">
+
+    <div
+      class="gift"
+      onclick="openGift()"
+    >
+      🎁
+    </div>
+
+
+    <div
+      class="surprise"
+      id="surprise"
+    >
+
+      <h3>
+        Surprise! 💗
+      </h3>
+
+      <p>
+        SELAMAT ULANG TAHUN SAYANG KU,I LOVE YOU
+      </p>
+
+      <br>
+
+      <p>
+        <b>
+          Happy Birthday, Njell! 🎂🌸
+        </b>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <h2>
+    Happy Birthday, Njell 💗
+  </h2>
+
+  <p>
+    30 September 2026
+  </p>
+
+  <br>
+
+  <p>
+    Made with 💕
+  </p>
+
+</footer>
+
+
+</div>
+
+
+<script>
+
+/* ================================================= */
+/* PASSWORD */
+/* ================================================= */
+
+function unlock(){
+
+  const input =
+    document.getElementById("password");
+
+  const error =
+    document.getElementById("error");
+
+  if(input.value === "30092026"){
+
+    document.getElementById("lockScreen")
+      .style.display="none";
+
+    document.getElementById("website")
+      .style.display="block";
+
+    startFloating();
+
+  }else{
+
+    error.style.display="block";
+
+    input.value="";
+
+    setTimeout(function(){
+
+      error.style.display="none";
+
+    },2000);
+
+  }
+
+}
+
+
+/* ENTER PASSWORD */
+
+document
+.getElementById("password")
+.addEventListener("keydown",function(event){
+
+  if(event.key==="Enter"){
+    unlock();
+  }
+
+});
+
+
+/* ================================================= */
+/* GALERI */
+/* ================================================= */
+
+let currentPhoto=0;
+
+const track=
+document.getElementById("galleryTrack");
+
+const photos=
+document.querySelectorAll(".photo");
+
+const dotsContainer=
+document.getElementById("dots");
+
+
+photos.forEach(function(photo,index){
+
+  const dot=
+  document.createElement("div");
+
+  dot.className="dot";
+
+  dot.onclick=function(){
+
+    showPhoto(index);
+
+  };
+
+  dotsContainer.appendChild(dot);
+
+});
+
+
+const dots=
+document.querySelectorAll(".dot");
+
+
+function showPhoto(index){
+
+  if(index<0){
+    index=photos.length-1;
+  }
+
+  if(index>=photos.length){
+    index=0;
+  }
+
+  currentPhoto=index;
+
+  track.style.transform=
+  "translateX(-"+(index*100)+"%)";
+
+  dots.forEach(function(dot,i){
+
+    dot.classList.toggle(
+      "active",
+      i===index
+    );
+
+  });
+
+}
+
+
+function nextPhoto(){
+
+  showPhoto(currentPhoto+1);
+
+}
+
+
+function prevPhoto(){
+
+  showPhoto(currentPhoto-1);
+
+}
+
+
+showPhoto(0);
+
+
+/* ================================================= */
+/* SWIPE FOTO */
+/* ================================================= */
+
+let touchStart=0;
+
+track.addEventListener(
+  "touchstart",
+  function(event){
+
+    touchStart=
+    event.touches[0].clientX;
+
+  }
+);
+
+
+track.addEventListener(
+  "touchend",
+  function(event){
+
+    const touchEnd=
+    event.changedTouches[0].clientX;
+
+    const difference=
+    touchStart-touchEnd;
+
+    if(Math.abs(difference)>50){
+
+      if(difference>0){
+        nextPhoto();
+      }else{
+        prevPhoto();
+      }
+
+    }
+
+  }
+);
+
+
+/* ================================================= */
+/* HADIAH */
+/* ================================================= */
+
+function openGift(){
+
+  const surprise=
+  document.getElementById("surprise");
+
+  surprise.style.display="block";
+
+  for(let i=0;i<18;i++){
+
+    setTimeout(function(){
+
+      createFloating();
+
+    },i*100);
+
+  }
+
+}
+
+
+/* ================================================= */
+/* FLOATING HEART */
+/* ================================================= */
+
+function createFloating(){
+
+  const element=
+  document.createElement("div");
+
+  element.className="floating";
+
+  const objects=[
+    "💗",
+    "💕",
+    "💖",
+    "🌸",
+    "🌷",
+    "✨"
+  ];
+
+  element.innerHTML=
+  objects[
+    Math.floor(
+      Math.random()*objects.length
+    )
+  ];
+
+  element.style.left=
+  Math.random()*100+"vw";
+
+  element.style.fontSize=
+  (15+Math.random()*20)+"px";
+
+  element.style.animationDuration=
+  (5+Math.random()*5)+"s";
+
+  document.body.appendChild(element);
+
+  setTimeout(function(){
+
+    element.remove();
+
+  },10000);
+
+}
+
+
+function startFloating(){
+
+  setInterval(function(){
+
+    createFloating();
+
+  },850);
+
+}
+
+</script>
+
+</body>
+</html>
